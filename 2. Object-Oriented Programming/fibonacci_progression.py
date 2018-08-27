@@ -13,7 +13,7 @@ class FibonacciProgresion(Progression):
         second                  the second term of the progression (default 1)
         """
 
-        super.__init__(first)           # start progression at first
+        super().__init__(first)           # start progression at first
         self._prev = second - first     # fictitious value preceding the first
 
     def _advance(self):
