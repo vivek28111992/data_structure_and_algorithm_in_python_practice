@@ -29,7 +29,7 @@ class TicTacToe:
     
     def _is_win(self, mark):
         """Check whether the board configuration a win for the given player."""
-        board = self._board
+        board = self._board                                         # local variable for shorthand
         return (mark == board[0][0] == board[0][1] == board[0][2] or        # row 0
                 mark == board[1][0] == board[1][1] == board[1][2] or        # row 1
                 mark == board[2][0] == board[2][1] == board[2][2] or        # row 2
@@ -51,3 +51,25 @@ class TicTacToe:
         rows = ['|'.join(self._board[r]) for r in range(3)]
         return '\n--------\n'.join(rows)
 
+game = TicTacToe()
+# X moves:              
+game.mark(1, 1)
+# O moves:
+game.mark(0, 2)
+# X moves: 
+game.mark(2, 2)  
+# O moves:
+game.mark(0, 0)
+# X moves: 
+game.mark(0, 1)      
+# O moves:
+game.mark(2, 1)
+# X moves:
+game.mark(2, 0)
+
+print(game)
+winner = game.winner()
+if winner is None:
+    print('Tie')
+else:
+    print(winner, 'wins')
